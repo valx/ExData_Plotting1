@@ -1,5 +1,3 @@
-
-
 data <- read.csv("household_power_consumption.txt",sep=';')
 dataF <- data
 dataF$Date <- as.Date(dataF$Date,format="%d/%m/%Y")
@@ -19,7 +17,6 @@ legSize = 0.7
 attach(mtcars)
 par(mfrow=c(2,2))
 
-
 plot(dataF2$Global_active_power, type='n' ,   axes=FALSE,
      ylab="Global Active Power",xlab='', 
      cex.axis=textSize, cex.lab=textSize, cex.main=titleSize)
@@ -28,7 +25,6 @@ axis(side=1, at=c(0, 1440, 2880) , labels=c('Thu','Fri','Sat'),cex.axis=textSize
 lines(dataF2$Global_active_power)
 box()
 
-
 plot(dataF2$Voltage, type='n' ,   axes=FALSE,
      ylab="Voltage",xlab='', 
      cex.axis=textSize, cex.lab=textSize, cex.main=titleSize)
@@ -36,7 +32,6 @@ axis(side=2, at=seq(234, 246, by=4), cex.axis=textSize)
 axis(side=1, at=c(0, 1440, 2880) , labels=c('Thu','Fri','Sat'),cex.axis=textSize)
 lines(dataF2$Voltage)
 box()
-
 
 plot(dataF2$Sub_metering_1, type='n' ,   axes=FALSE,
      ylab="Energy sub metering",xlab='', width=480,height=480,
@@ -56,7 +51,6 @@ legend("topright", # places a legend at the appropriate place
        bty='n'
 )
 
-
 plot(dataF2$Global_reactive_power, type='n' ,   axes=FALSE,
      ylab="Global_reactive_power",xlab='', 
      cex.axis=textSize, cex.lab=textSize, cex.main=titleSize)
@@ -64,7 +58,6 @@ axis(side=2, at=seq(0, 0.5, by=0.1), cex.axis=textSize)
 axis(side=1, at=c(0, 1440, 2880) , labels=c('Thu','Fri','Sat'),cex.axis=textSize)
 lines(dataF2$Global_reactive_power)
 box()
-
 
 dev.copy(png,"plot4.png",width=480,height=480,units="px",res=100)
 dev.off()
